@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let saldo = 50000
+
+
+        function retirarDinero(dinero) {
+            let resultado = saldo - dinero
+            console.log("retiraste " + dinero)
+            console.log("Saldo actual " + resultado)
+
+        }
+
+        function validarClave(clave) {
+            if (clave === "1235") {
+                console.log(clave)
+                let dinero = Number(prompt("Cuanto retiras"))
+                retirarDinero(dinero)
+            } else {
+                alert("Clave incorrecta")
+            }
+        }
+
+        function ingresarClave(tarjeta) {
+            if (tarjeta) {
+                let clave = prompt("Ingresar Clave")
+                // validar la clave
+                validarClave(clave)
+            } else {
+                alert("Es necesaria una tarjeta")
+            }
+        }
+
+        function entrarAlCajero() {
+            let tarjeta = confirm("Ingrese Tajeta")
+            console.log(tarjeta)
+            ingresarClave(tarjeta)
+
+        }
+
+        entrarAlCajero()
+
+    </script>
+</body>
+
+</html>
