@@ -1,7 +1,3 @@
-// ALERT ----------------------------------------
-
-//alert("Debes ser mayor de 18 años para usar este sistema");
-
 // VALIDACION DE EDAD ---------------------------
 
 const inputName = document.querySelector('.inputName');
@@ -16,13 +12,15 @@ inputButton.addEventListener('click', (evt) => {
     if (textAge >= 18) {
         const user = document.querySelector('.user');
         user.textContent = textName;
-        document.getElementById('pagina').style.display = "initial";
+        document.getElementById('pagina').style.display = "flex";
         document.getElementById('datosPersona').style.display = "none";
         document.getElementById('navBar').style.display = "flex";
     }
 
     else {
         const mensajeError = document.querySelector('.mensajeError');
+        document.querySelector('.tituloValidador').style.display = "none";
+        document.querySelector('.formValidador').style.display = "none";
         mensajeError.innerHTML = "Lo siento " + textName + ", pero tenés que ser mayor de edad para poder usar este sistema.<br><br>Buscá ayuda de un adulto y volvelo a intentar.";
     }
 })
@@ -86,20 +84,20 @@ for (let i = 4; i < peliculas.length; i += 1) {
 
 function constructorProducto(id, nombre, precio, cantidad, img) {
     this.id = id,
-        this.nombre = nombre;
+    this.nombre = nombre;
     this.precio = precio;
     this.cantidad = cantidad;
     this.img = img;
 }
 
-const producto0 = new constructorProducto(01, "ENTRADA SALA 1 - Turbo", 1100, 1, "https://i.pinimg.com/originals/f0/74/b6/f074b6297d05c31c2de42e189a6d2f78.png");
-const producto1 = new constructorProducto(02, "ENTRADA SALA 2 - 3D", 1000, 1, "https://i.pinimg.com/originals/f0/74/b6/f074b6297d05c31c2de42e189a6d2f78.png");
-const producto2 = new constructorProducto(03, "ENTRADA SALA 3", 900, 1, "https://i.pinimg.com/originals/f0/74/b6/f074b6297d05c31c2de42e189a6d2f78.png");
-const producto3 = new constructorProducto(04, "ENTRADA SALA 4", 900, 1, "https://i.pinimg.com/originals/f0/74/b6/f074b6297d05c31c2de42e189a6d2f78.png");
-const producto4 = new constructorProducto(05, "GASEOSA", 500, 1, "https://i.etsystatic.com/34050632/r/il/63a93a/3621947012/il_570xN.3621947012_qbh9.jpg");
-const producto5 = new constructorProducto(06, "POCHOCLOS", 600, 1, "https://www.maccorns.co.uk/wp-content/uploads/2019/04/popcorn-bag-2.png");
-const producto6 = new constructorProducto(07, "COMBO 1", 1000, 1, "https://tuquejasuma.com/media/cache/2c/7a/2c7a0329f8f0e82c079e1107ce074d71.png");
-const producto7 = new constructorProducto(08, "COMBO 2", 1900, 1, "https://tuquejasuma.com/media/cache/2c/7a/2c7a0329f8f0e82c079e1107ce074d71.png");
+const producto0 = new constructorProducto(01, "ENTRADA SALA 1 - Turbo", 1100, 1, "../images/ticket.jpg");
+const producto1 = new constructorProducto(02, "ENTRADA SALA 2 - 3D", 1000, 1, "../images/ticket.jpg");
+const producto2 = new constructorProducto(03, "ENTRADA SALA 3", 900, 1, "../images/ticket.jpg");
+const producto3 = new constructorProducto(04, "ENTRADA SALA 4", 900, 1, "../images/ticket.jpg");
+const producto4 = new constructorProducto(05, "GASEOSA", 500, 1, "../images/gaseosa.jpg");
+const producto5 = new constructorProducto(06, "POCHOCLOS", 600, 1, "../images/pochoclos.jpg");
+const producto6 = new constructorProducto(07, "COMBO 1", 1000, 1, "../images/combo1.jpg");
+const producto7 = new constructorProducto(08, "COMBO 2", 1900, 1, "../images/combo2.jpg");
 
 
 const productos = [producto0, producto1, producto2, producto3, producto4, producto5, producto6, producto7];
@@ -197,7 +195,7 @@ const pintarCarrito = () => {
         eliminar.innerHTML = "X";
         eliminar.className = "deleteProducto";
         carritoContent.append(eliminar);
-        eliminar.addEventListener("click", eliminarProducto);
+        eliminar.addEventListener("click", () => eliminarProducto(producto.id));
     });
 
     const total = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
@@ -246,12 +244,13 @@ borrarCarrito.addEventListener("click", vaciarCarrito);
 
 // FUNCION ELIMINAR PRODUCTO CON LA X POR SU ID
 
-const eliminarProducto = () => {
-    const foundId = carrito.find((element) => element.id);
+const eliminarProducto = (id) => {
+    const foundId = carrito.find((element) => element.id == id);
 
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
+
     contadorCarrito();
     saveLocal();
     pintarCarrito();

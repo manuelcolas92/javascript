@@ -19,140 +19,142 @@
 </head>
 
 <body>
-    <div class="body2">
-    <div class="banner_main">
-        <p>CinesAR</p>
-        <div id="navBar" class="navbar">
-            <div class="logo">
-                <i class="fa-solid fa-ticket"></i>
-                <p class="logo_nombre">CinesAR</p>
-            </div>
-            <div class="links">
-                <a href="#sec_car">Cartelera</a>
-                <a href="#sec_est">Estrenos</a>
-                <a href="#sec_bol">Boletería</a>
-                <a href="#sec_con">Contacto</a>
-                <i class="fa-solid fa-user"></i>
-                <span class="user"></span>
-            </div>
-        </div>
-    </div>
-
     <!--Validador de edad-->
 
     <div id="datosPersona">
-        <form>
+        <p class="tituloValidador">Por favor decinos tu nombre y tu edad, recordá que tenés que ser mayor de 18 para
+            usar este sistema</p>
+        <form class="formValidador">
             <input class="inputName" type="text" placeholder="Ingresá tu nombre" minlength="3" maxlength="10" required>
             <input class="inputAge" type="number" placeholder="Seleccioná tu edad" min="1" required>
             <button class="inputButton">Validar Edad</button>
         </form>
         <p class="mensajeError"></p>
     </div>
-
-    <!--Pagina WEB completa luego de validar edad-->
-
-    <div id="pagina">
-
-        <!--NAVBAR-->
-
-        
-
-        <!--SECCION CARTELERA-->
-
-        <div id="sec_car">
-            <div class="banner_cartelera">
-                <h2>PELICULAS EN CARTELERA</h2>
-            </div>
-
-            <div class="cartelera">
-                <!--Tarjetas con <span> e <img> generados en JS-->
-            </div>
-        </div>
-
-        <!--SECCION ESTRENOS-->
-
-        <div id="sec_est">
-            <div class="banner_estrenos">
-                <h2>PROXIMOS ESTRENOS</h2>
-            </div>
-
-            <div class="estrenos">
-                <!--Tarjetas con <span> e <img> generados en JS-->
-            </div>
-        </div>
-
-        <!--SECCION BOLETERIA-->
-
-        <div id="sec_bol">
-            <div class="banner_bol">
-                <h2>BOLETERIA Y CANDSHOP</h2>
-            </div>
-            <div id="pizarraContent" class="pizarra">
-                <!--Cards con <img>, <h3>, y <p> en JS-->
-            </div>
-            <div id="modalContainer" class="modalContainer">
-                <!--Modal generado en JS-->
-            </div>
-            <div class="panelCarrito">                
-                <button id="verCarrito" class="cartButton">Ir al carrito</button>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cantidadCarrito" class="cantidadCarrito"></span>
-                <button id="borrarCarrito" class="clearButton">Borrar carrito</button>
-            </div>
-        </div>
-
-        <!--CONTACTO-->
-
-        <div id="sec_con">
-            <div class="banner_con">
-                <h2>CONTACTANOS</h2>
-            </div>
-            <div class="contacto">
-                
-                <div class="md">
-                    <p>Dejanos tu mensaje</p>
-                    <form id="form">
-                        <div class="field">
-                            <label for="from_name">Nombre</label>
-                            <input type="text" name="from_name" id="from_name" required>
-                        </div>
-                        <div class="field">
-                            <label for="message">Mensaje</label>
-                            <textarea type="text" name="message" id="message" minlength="10" maxlength="300"
-                                required></textarea>
-                        </div>
-                        <div class="field">
-                            <label for="email_id">Email</label>
-                            <input type="text" name="email_id" id="email_id" required>
-                        </div>
-                        <div class="mensajeEnviado">
-                            <!--Mensaje de enviado generado en JS-->
-                        </div>
-                        <input type="submit" id="button" value="Enviar Mensaje" class="enviarButton">
-                    </form>
+    <div id="pagina" class="body2">
+        <div class="banner_main">
+            <p class="tituloMain">CinesAR</p>
+            <!--NAVBAR-->
+            <div id="navBar" class="navbar">
+                <div class="logo">
+                    <i class="fa-solid fa-ticket"></i>
+                    <p class="logo_nombre">CinesAR</p>
                 </div>
-                <div class="redes">
-                    <p>Seguinos en redes</p>
-                    <div class="redes_iconos">
-                        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-square-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-                    </div>    
+                <div class="links">
+                    <a href="#sec_car">Cartelera</a>
+                    <a href="#sec_est">Estrenos</a>
+                    <a href="#sec_bol">Boletería</a>
+                    <a href="#sec_con">Contacto</a>
+                    <i class="fa-solid fa-user"></i>
+                    <span class="user"></span>
                 </div>
             </div>
         </div>
-        <footer id="sec_foo">
-            <div class="footerLinks">
-                <a href="#sec_car">Cartelera</a>
-                <a href="#sec_est">Estrenos</a>
-                <a href="#sec_bol">Boletería</a>
-                <a href="#sec_con">Contacto</a>              
+
+
+
+
+
+        <!--Pagina WEB completa luego de validar edad-->
+
+
+
+            <!--SECCION CARTELERA-->
+
+            <div id="sec_car">
+                <div class="banner_cartelera">
+                    <h2>PELICULAS EN CARTELERA</h2>
+                </div>
+
+                <div class="cartelera">
+                    <!--Tarjetas con <span> e <img> generados en JS-->
+                </div>
             </div>
-            <div class="footerCopy">
-                <p>Manuel Colás - Curso JavaScript - CODERHOUSE 2023</p>
-            </div>            
-        </footer>
-      </div>
+
+            <!--SECCION ESTRENOS-->
+
+            <div id="sec_est">
+                <div class="banner_estrenos">
+                    <h2>PROXIMOS ESTRENOS</h2>
+                </div>
+
+                <div class="estrenos">
+                    <!--Tarjetas con <span> e <img> generados en JS-->
+                </div>
+            </div>
+
+            <!--SECCION BOLETERIA-->
+
+            <div id="sec_bol">
+                <div class="banner_bol">
+                    <h2>BOLETERIA Y CANDYSHOP</h2>
+                </div>
+                <div id="pizarraContent" class="pizarra">
+                    <!--Cards con <img>, <h3>, y <p> en JS-->
+                </div>
+                <div id="modalContainer" class="modalContainer">
+                    <!--Modal generado en JS-->
+                </div>
+                <div class="panelCarrito">
+                    <button id="verCarrito" class="cartButton">Ir al carrito</button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cantidadCarrito" class="cantidadCarrito"></span>
+                    <button id="borrarCarrito" class="clearButton">Borrar carrito</button>
+                </div>
+            </div>
+
+            <!--CONTACTO-->
+
+            <div id="sec_con">
+                <div class="banner_con">
+                    <h2>CONTACTANOS</h2>
+                </div>
+                <div class="contacto">
+
+                    <div class="md">
+                        <p>Dejanos tu mensaje</p>
+                        <form id="form">
+                            <div class="field">
+                                <label for="from_name">Nombre</label>
+                                <input type="text" name="from_name" id="from_name" required>
+                            </div>
+                            <div class="field">
+                                <label for="message">Mensaje</label>
+                                <textarea type="text" name="message" id="message" minlength="10" maxlength="300"
+                                    required></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="email_id">Email</label>
+                                <input type="text" name="email_id" id="email_id" required>
+                            </div>
+                            <div class="mensajeEnviado">
+                                <!--Mensaje de enviado generado en JS-->
+                            </div>
+                            <input type="submit" id="button" value="Enviar Mensaje" class="enviarButton">
+                        </form>
+                    </div>
+                    <div class="redes">
+                        <p>Seguinos en redes</p>
+                        <div class="redes_iconos">
+                            <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                            <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="sec_foo">
+                <div class="footerLinks">
+                    <a href="#sec_car">Cartelera</a>
+                    <a href="#sec_est">Estrenos</a>
+                    <a href="#sec_bol">Boletería</a>
+                    <a href="#sec_con">Contacto</a>
+                </div>
+                <div class="footerCopy">
+                    <p>Manuel Colás - Curso JavaScript - CODERHOUSE 2023</p>
+                </div>
+            </footer>
+    
         <script src="./js/main.js"></script>
 </body>
 
