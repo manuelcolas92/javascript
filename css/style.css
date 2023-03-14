@@ -9,14 +9,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
-    scroll-behavior: smooth;
 }
 
 .body2 {
     display: none;
     flex-direction: column;
     align-content: center;
-    width: 1300px;
+    width: 1100px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/wallpaper-gris.jpg);
     background-attachment: fixed;
     background-size: cover;
