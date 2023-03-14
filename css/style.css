@@ -26,10 +26,10 @@ body {
 
 /* DISPLAYS DE LA PAGINA */
 
-/*#pagina {
+#pagina {
     display: none;
     flex-direction: column;
-}*/
+}
 
 #datosPersona {
     display: flex;
