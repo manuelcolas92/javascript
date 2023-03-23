@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--Mis CSS, normalize y vistas responsive-->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style2.css">
     <!--Fuentes de google-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!--Iconos de fontawsome-->
-    <script src="https://kit.fontawesome.com/493bda53b5.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        emailjs.init('GwS96ZasiGChzcZyO')
-    </script>
+    <!--Mi Titulo-->
     <title>CinesAR</title>
 </head>
 
 <body>
+
     <!--Validador de edad-->
 
     <div id="datosPersona">
-        <p class="tituloValidador">Por favor decinos tu nombre y tu edad, recordá que tenés que ser mayor de 18 para
-            usar este sistema</p>
+        <p class="tituloValidador">Por favor decinos tu nombre y tu edad<br>Recordá que tenés que ser mayor de 18 años
+            para
+            utilizar la plataforma</p>
         <form class="formValidador">
             <input class="inputName" type="text" placeholder="Ingresá tu nombre" minlength="3" maxlength="10" required>
             <input class="inputAge" type="number" placeholder="Seleccioná tu edad" min="1" required>
@@ -33,8 +35,27 @@
     </div>
     <div id="pagina" class="body2">
         <div class="banner_main">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/banner.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/banner2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/banner3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/banner4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/banner5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
             <p class="tituloMain">CinesAR</p>
-            <!--NAVBAR-->
             <div id="navBar" class="navbar">
                 <div class="logo">
                     <i class="fa-solid fa-ticket"></i>
@@ -51,112 +72,120 @@
             </div>
         </div>
 
-
-
-
-
         <!--Pagina WEB completa luego de validar edad-->
 
+        <!--SECCION CARTELERA-->
 
+        <div id="sec_car">
+            <div class="banner_cartelera">
+                <h2>CARTELERA</h2>
+                <div class="linea"></div>
+            </div>
+            <div class="cartelera">
+                <!--Tarjetas con <span> e <img> generados en JS-->
+            </div>
+        </div>
 
-            <!--SECCION CARTELERA-->
+        <!--SECCION ESTRENOS-->
 
-            <div id="sec_car">
-                <div class="banner_cartelera">
-                    <h2>CARTELERA</h2>
-                </div>
-
-                <div class="cartelera">
-                    <!--Tarjetas con <span> e <img> generados en JS-->
-                </div>
+        <div id="sec_est">
+            <div class="banner_estrenos">
+                <h2>PROXIMOS ESTRENOS</h2>
+                <div class="linea"></div>
             </div>
 
-            <!--SECCION ESTRENOS-->
-
-            <div id="sec_est">
-                <div class="banner_estrenos">
-                    <h2>PROXIMOS ESTRENOS</h2>
-                </div>
-
-                <div class="estrenos">
-                    <!--Tarjetas con <span> e <img> generados en JS-->
-                </div>
+            <div class="estrenos">
+                <!--Tarjetas con <span> e <img> generados en JS-->
             </div>
+        </div>
 
-            <!--SECCION BOLETERIA-->
+        <!--SECCION BOLETERIA-->
 
-            <div id="sec_bol">
-                <div class="banner_bol">
-                    <h2>BOLETERIA Y CANDYSHOP</h2>
-                </div>
-                <div id="pizarraContent" class="pizarra">
-                    <!--Cards con <img>, <h3>, y <p> en JS-->
-                </div>
-                <div id="modalContainer" class="modalContainer">
-                    <!--Modal generado en JS-->
-                </div>
-                <div class="panelCarrito">
-                    <button id="verCarrito" class="cartButton">Ir al carrito</button>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span id="cantidadCarrito" class="cantidadCarrito"></span>
-                    <button id="borrarCarrito" class="clearButton">Borrar carrito</button>
-                </div>
+        <div id="sec_bol">
+            <div class="banner_bol">
+                <h2>BOLETERIA & CANDYSHOP</h2>
+                <div class="linea"></div>
             </div>
+            <div id="pizarraContent" class="pizarra">
+                <!--Cards con <img>, <h3>, y <p> en JS-->
+            </div>
+            <div id="modalContainer" class="modalContainer">
+                <!--Modal generado en JS-->
+            </div>
+            <div class="panelCarrito">
+                <button id="verCarrito" class="cartButton">Ir al carrito</button>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cantidadCarrito" class="cantidadCarrito"></span>
+                <button id="borrarCarrito" class="clearButton">Borrar carrito</button>
+            </div>
+        </div>
 
-            <!--CONTACTO-->
+        <!--CONTACTO-->
 
-            <div id="sec_con">
-                <div class="banner_con">
-                    <h2>CONTACTANOS</h2>
-                </div>
-                <div class="contacto">
-
-                    <div class="md">
-                        <p>Dejanos tu mensaje</p>
-                        <form id="form">
-                            <div class="field">
-                                <label for="from_name">Nombre</label>
-                                <input type="text" name="from_name" id="from_name" required>
-                            </div>
-                            <div class="field">
-                                <label for="message">Mensaje</label>
-                                <textarea type="text" name="message" id="message" minlength="10" maxlength="300"
-                                    required></textarea>
-                            </div>
-                            <div class="field">
-                                <label for="email_id">Email</label>
-                                <input type="text" name="email_id" id="email_id" required>
-                            </div>
-                            <div class="mensajeEnviado">
-                                <!--Mensaje de enviado generado en JS-->
-                            </div>
-                            <input type="submit" id="button" value="Enviar Mensaje" class="enviarButton">
-                        </form>
-                    </div>
-                    <div class="redes">
-                        <p>Seguinos en redes</p>
-                        <div class="redes_iconos">
-                            <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                            <a href=""><i class="fa-brands fa-square-twitter"></i></a>
-                            <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+        <div id="sec_con">
+            <div class="banner_con">
+                <h2>CONTACTANOS</h2>
+            </div>
+            <div class="contacto">
+                <div class="md">
+                    <p>Dejanos tu mensaje</p>
+                    <form id="form">
+                        <div class="field">
+                            <label for="from_name">Nombre</label>
+                            <input type="text" name="from_name" id="from_name" required>
                         </div>
+                        <div class="field">
+                            <label for="message">Mensaje</label>
+                            <textarea type="text" name="message" id="message" required></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="email_id">Email</label>
+                            <input type="text" name="email_id" id="email_id" required>
+                        </div>
+                        <input type="submit" id="button" value="Enviar">
+                    </form>
+                </div>
+                <div class="redes">
+                    <p>Seguinos en redes</p>
+                    <div class="redes_iconos">
+                        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                    <div class="direccion">
+                        <p>Tel. 0291-4517527</p>
+                        <p>Av. Pedro Cabrera 4189</p>
+                        <p>Bahía Blanca, Buenos Aires, Argentina</p>
                     </div>
                 </div>
             </div>
-            <footer id="sec_foo">
-                <div class="footerLinks">
-                    <a href="#sec_car">CARTELERA</a>
-                    <a href="#sec_est">ESTRENOS</a>
-                    <a href="#sec_bol">BOLETERIA</a>
-                    <a href="#sec_con">CONTACTO</a>
-                </div>
-                <div class="footerCopy">
-                    <p>Manuel Colás - Curso JavaScript - CODERHOUSE 2023</p>
-                </div>
-            </footer>
-    
+        </div>
+        <footer id="sec_foo">
+            <div class="footerLinks">
+                <a href="#sec_car">CARTELERA</a>
+                <a href="#sec_est">ESTRENOS</a>
+                <a href="#sec_bol">BOLETERIA</a>
+                <a href="#sec_con">CONTACTO</a>
+            </div>
+            <div class="footerCopy">
+                <p><a href="https://github.com/manuelcolas92">Manuel Colás</a> - Curso JavaScript - CODERHOUSE 2023</p>
+            </div>
+        </footer>
+        <!--Iconos de fontawsome-->
+        <script src="https://kit.fontawesome.com/493bda53b5.js" crossorigin="anonymous"></script>
+        <!--SeetAlert2 JS-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+        <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+        <!--Email JS-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            emailjs.init('d62k54h8fm00dp6F6')
+        </script>
+        <!--Mi JS-->
         <script src="./js/main.js"></script>
 </body>
-
 
 </html>

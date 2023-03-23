@@ -1,0 +1,743 @@
+@media screen and (min-width: 320px) and (max-width: 1199px){
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../images/wallpaper-items.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.body2 {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    width: 375px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/wallpaper-gris.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.9);
+}
+
+#datosPersona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin: 50px 0 50px 0;
+    border: 2px solid white;
+    width: 70%;
+}
+
+.formValidador {
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloValidador {
+    color: white;
+    font-size: 15px;
+    ;
+    width: 90%;
+    text-align: center;
+    padding: 30px;
+}
+
+#datosPersona input {
+    max-height: 30px;
+    border: none;
+    margin-top:5px;
+}
+
+#datosPersona input:focus {
+    outline: none;
+}
+
+.inputButton {
+    background-color: #007BF2;
+    max-height: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top:5px;
+}
+
+.mensajeError {
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 700px;
+}
+
+/* BANNER MAIN ---------------------------------- */
+
+.banner_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.carousel-inner {
+    height: 600px;
+    filter: brightness(70%);
+}
+
+.tituloMain {
+    color: white;
+    line-height: 1;
+    font-weight: 100;
+    font-size: 50px;
+    top: 100px;
+    position: absolute;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+/* NAVBAR --------------------------------------- */
+
+.navbar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 375px;
+    top: 200px;
+    position: absolute;
+    z-index: 10;
+}
+
+.logo {
+    margin-left: 20px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .fa-ticket {
+    color: white;
+    font-size: 45px;
+    margin-left: 30px;
+    font-weight: 0;
+}
+
+.navbar .logo_nombre {
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 10px;
+}
+
+.links {
+    width: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin: 5px;
+}
+
+.navbar a:hover {
+    color: #007BF2;
+    transition: 0.2s;
+}
+
+.fa-user {
+    color: white;
+    font-weight: 100;
+    font-size: 12px;
+    margin-left: 25px;
+    margin-right: 5px;
+}
+
+.user {
+    color: white;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+/* SECCION CARTELERA Y ESTRENOS ----------------- */
+
+.linea {
+    border: 1px solid white;
+    margin-top: 30px;
+    width: 990px;
+}
+
+#sec_car {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.banner_cartelera {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 200px;
+}
+
+.banner_cartelera h2 {
+    color: white;
+    font-size: 45px;
+    font-weight: 900;
+    width: 990px;
+    line-height: 0;
+    box-shadow: 0px 0px 50px 50px rgba(0, 131, 238, 0.7);
+}
+
+#sec_est {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.banner_estrenos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.banner_estrenos h2 {
+    color: white;
+    font-size: 45px;
+    font-weight: 900;
+    width: 990px;
+    line-height: 0;
+    box-shadow: 0px 0px 50px 50px rgba(0, 131, 238, 0.7);
+}
+
+.cartelera,
+.estrenos {
+
+    /* Contiene las .tarjeta generadas en JS*/
+
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta {
+
+    /* Contiene el <span> y la <img> generados en JS*/
+
+    border: none;
+    background-color: white;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 10px;
+    max-width: 250px;
+}
+
+.tarjeta span {
+    color: #404040;
+    font-size: 30px;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px white;
+}
+
+.tarjeta img {
+    width: 250px;
+    height: 400px;
+}
+
+/* SECCION BOLETERIA ---------------------------- */
+
+#sec_bol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.banner_bol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+}
+
+.banner_bol h2 {
+    color: white;
+    font-size: 45px;
+    font-weight: 900;
+    width: 990px;
+    line-height: 0;
+    box-shadow: 0px 0px 50px 50px rgba(0, 131, 238, 0.7);
+}
+
+/* Tarjetas */
+
+.pizarra {
+
+    /* Contiene las .tarjeta2 generadas en JS*/
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1300px;
+}
+
+.pizarra img {
+    width: 250px;
+    height: 250px;
+    margin-top: 15px;
+}
+
+.card {
+
+    /* Contiene el <span> y la <img> generados en JS*/
+
+    border: none;
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+}
+
+.card p {
+    color: #303030;
+    text-align: center;
+    font-size: 18px;
+}
+
+.addButton {
+    width: 100%;
+    height: 50px;
+    background-color: #007BF2;
+    color: white;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #005FBA;
+    transition: 0.2s;
+}
+
+/* Modal Carrito */
+
+.modalContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../images/barras.jpg);
+    width: 1060px;
+    min-height: 1000px;
+    top: 2440px;
+    position: absolute;
+    z-index: 1000;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+/* Barrita del modal */
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 38px;
+    background: rgb(0, 48, 97, 0.7);
+}
+
+.modalHeader h1 {
+    font-size: 23px;
+    line-height: 0.5;
+    color: white;
+    margin-left: 10px;
+}
+
+.modalHeaderButton {
+    color: white;
+    font-size: 19px;
+    height: 27px;
+    width: 90px;
+    line-height: 0;
+    background-color: #9F0000;
+    border: none;
+    cursor: pointer;
+    margin: 0px 5px 0px 0;
+    padding-bottom: 3px;
+}
+
+.modalHeaderButton:hover {
+    background-color: #7C0000;
+    transition: 0.2s;
+}
+
+/* Cuerpo del modal */
+
+.carritoContent {
+    /* Card en carrito, contiene img y p */
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 2px 2px 20px 1px black;
+}
+
+.carritoContent img {
+    width: 100px;
+    height: 100px;
+}
+
+.item-nom,
+.item-res,
+.item-can,
+.item-sum,
+.item-pre {
+    color: #303030;
+    display: flex;
+    font-size: 15px;
+}
+
+.item-nom {
+    font-weight: 900;
+    width: 300px;
+    padding-left: 50px;
+    justify-content: flex-start;
+}
+
+.item-res {
+    width: 50px;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    cursor: pointer;
+}
+
+.item-can {
+    width: 150px;
+    justify-content: center;
+}
+
+.item-sum {
+    width: 50px;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    cursor: pointer;
+}
+
+.item-pre {
+    width: 150px;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.carritoEmpty {
+    color: white;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+
+.totalCompra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    color: white;
+    margin: 50px 10px 60px 10px;
+    width: 80%;
+    height: 100px;
+    padding: 20px 20px 0;
+    border-radius: 5px;
+}
+
+.totalCompra p {
+    color: white;
+    font-size: 30px;
+}
+
+/* Boton Eliminar del carrito */
+
+.deleteProducto {
+    font-size: 20px;
+    font-weight: 900;
+    color: red;
+    cursor: pointer;
+}
+
+/* Botones Ir al carrito y Borrar carrito y Cantidad carrito */
+
+.panelCarrito {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.fa-cart-shopping {
+    color: white;
+    font-size: 30px;
+    margin: 15px;
+
+}
+
+.cartButton {
+    background-color: #007BF2;
+    color: white;
+    height: 30px;
+    width: 150px;
+    margin: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.cartButton:hover {
+    background-color: #005FBA;
+    transition: 0.2s;
+}
+
+.clearButton {
+    background-color: #9F0000;
+    color: white;
+    height: 30px;
+    width: 150px;
+    margin: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.clearButton:hover {
+    background-color: #7C0000;
+    transition: 0.2s;
+}
+
+.cantidadCarrito {
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 900;
+}
+
+/* SECCION CONTACTO ----------------------------- */
+
+/* General */
+
+#sec_con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/contacto.jpg);
+    background-attachment:fixed;
+    background-size:cover;
+    background-position: bottom;
+    background-repeat:no-repeat;
+}
+
+.banner_con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.banner_con h2 {
+    color: white;
+    font-size: 50px;
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-around;
+    width: 1200px;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.redes p {
+    color: white;
+    text-align: left;
+    font-size: 30px;
+}
+
+.redes_iconos {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    font-size: 70px;
+}
+
+.redes_iconos a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px 0 0px;
+}
+
+.redes_iconos a:hover {
+    color: #007BF2;
+    transition: 0.2s;
+}
+
+
+/* Estilos del form */
+
+.md {
+    width: 420px;
+    margin-bottom: 80px;
+}
+
+.md p {
+    color: white;
+    text-align: left;
+    font-size: 30px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.field label {
+    display: block;
+    font-size: 22px;
+    color: white;
+}
+
+.field input {
+    display: block;
+    min-width: 250px;
+    width: 400px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.field input,
+textarea:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    display: block;
+    font-size: 16px;
+    background-color: #007BF2;
+    color: white;
+    height: 30px;
+    width: 150px;
+    margin-top: 25px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #005FBA;
+    transition: 0.2s;
+}
+
+#message {
+    resize: none;
+    min-width: 250px;
+    width: 400px;
+    height: 100px;
+}
+
+.direccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 70px;
+}
+
+.direccion p {
+    color: white;
+    font-size: 20px;;
+}
+
+/* SECCION FOOTER ----------------------------- */
+
+#sec_foo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+}
+
+.footerLinks a {
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+
+}
+
+.footerLinks a:hover {
+    color: #007BF2;
+    transition: 0.2s;
+}
+
+.footerCopy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px
+}
+
+.footerCopy p {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.footerCopy a {
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}}

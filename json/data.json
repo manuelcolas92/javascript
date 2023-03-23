@@ -1,0 +1,66 @@
+[
+    {
+        "sala": "SALA 1",
+        "titulo": "Ironman",
+        "categoria": "ATP",
+        "genero": "Acción",
+        "entradasDisponibles": "200",
+        "imagen": "./images/ironman.jpg"
+    },
+    {
+        "sala": "SALA 2",
+        "titulo": "Harry Potter",
+        "categoria": "ATP",
+        "genero": "Infantil",
+        "entradasDisponibles": "200",
+        "imagen": "./images/harry.jpg"
+    },
+    {
+        "sala": "SALA 3",
+        "titulo": "El Orfanato",
+        "categoria": "+16",
+        "genero": "Terror",
+        "entradasDisponibles": "200",
+        "imagen": "./images/orfanato.jpg"
+    },
+    {
+        "sala": "SALA 4",
+        "titulo": "IT2",
+        "categoria": "+16",
+        "genero": "Terror",
+        "entradasDisponibles": "200",
+        "imagen": "./images/it.jpg"
+    },
+    {
+        "sala": "ESTRENO",
+        "titulo": "Relatos Salvajes",
+        "categoria": "+13",
+        "genero": "Suspenso",
+        "entradasDisponibles": "200",
+        "imagen": "./images/relatos.jpg"
+    },
+    {
+        "sala": "ESTRENO",
+        "titulo": "Joker",
+        "categoria": "+13",
+        "genero": "Drama",
+        "entradasDisponibles": "200",
+        "imagen": "./images/joker.jpg"
+    },
+    {
+        "sala": "ESTRENO",
+        "titulo": "Juego del Miedo",
+        "categoria": "+16",
+        "genero": "Suspenso",
+        "entradasDisponibles": "200",
+        "imagen": "./images/saw.jpg"
+    },
+    {
+        "sala": "ESTRENO",
+        "titulo": "Madagascar",
+        "categoria": "ATP",
+        "genero": "Infantil",
+        "entradasDisponibles": "200",
+        "imagen": "./images/madagascar.jpg"
+    }
+]

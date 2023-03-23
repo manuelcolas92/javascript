@@ -18,34 +18,46 @@ inputButton.addEventListener('click', (evt) => {
     }
 
     else {
-        const mensajeError = document.querySelector('.mensajeError');
-        document.querySelector('.tituloValidador').style.display = "none";
-        document.querySelector('.formValidador').style.display = "none";
-        mensajeError.innerHTML = "Lo siento " + textName + ", pero tenés que ser mayor de edad para poder usar este sistema.<br><br>Buscá ayuda de un adulto y volvelo a intentar.";
+        Swal.fire({
+            icon: "error",
+            title: "Error de acceso",
+            text: "Lo siento " + textName + ", pero no tienes edad suficiente para acceder al sitio, buscá ayuda de un adulto y volvelo a intentar!",
+        })
     }
 })
 
 // PELICULAS (OBJETOS Y ARRAY) ------------------
 
+/* 
+
+En principio para las películas utilicé un constructor de objetos, luego lo cambié por un archivo json
+
 function constructorPelicula(sala, titulo, genero, categoria, entradasDisponibles, imagen) {
     this.sala = sala;
     this.titulo = titulo;
     this.categoria = categoria;
-    this.entradasDisponibles = entradasDisponibles;
     this.genero = genero;
+    this.entradasDisponibles = entradasDisponibles;
     this.imagen = imagen;
 }
 
 const pelicula0 = new constructorPelicula("SALA 1", "Ironman", "ATP", "Acción", 200, "./images/ironman.jpg");
 const pelicula1 = new constructorPelicula("SALA 2", "Harry Potter", "ATP", "Infantil", 200, "./images/harry.jpg");
 const pelicula2 = new constructorPelicula("SALA 3", "El Orfanato", "+16", "Terror", 200, "./images/orfanato.jpg");
-const pelicula3 = new constructorPelicula("SALA 4", "Juego del Miedo", "+16", "Suspenso", 200, "./images/saw.jpg");
+const pelicula3 = new constructorPelicula("SALA 4", "IT2", "+16", "Terror", 200, "./images/it.jpg");
 const pelicula4 = new constructorPelicula("ESTRENO", "Relatos Salvajes", "+13", "Suspenso", 200, "./images/relatos.jpg");
-const pelicula5 = new constructorPelicula("ESTRENO", "Joker", "Drama", "+13", 200, "./images/joker.jpg");
-const pelicula6 = new constructorPelicula("ESTRENO", "IT2", "Terror", "+16", 200, "./images/it.jpg");
+const pelicula5 = new constructorPelicula("ESTRENO", "Joker", "+13", "Drama", 200, "./images/joker.jpg");
+const pelicula6 = new constructorPelicula("ESTRENO", "Juego del Miedo", "+16", "Suspenso", 200, "./images/saw.jpg");
 const pelicula7 = new constructorPelicula("ESTRENO", "Madagascar", "ATP", "Infantil", 200, "./images/madagascar.jpg");
 
 const peliculas = [pelicula0, pelicula1, pelicula2, pelicula3, pelicula4, pelicula5, pelicula6, pelicula7];
+
+*/
+
+const getPeliculas = async () => {
+    try{
+    const response = await fetch("./json/data.json");
+    const peliculas = await response.json();
 
 // CARTELERA ------------------------------------
 
@@ -75,7 +87,13 @@ for (let i = 4; i < peliculas.length; i += 1) {
     const img = document.createElement("img");
     img.src = peliculas[i].imagen;
     tarjeta.appendChild(img);
-}
+}}
+catch (err){
+    console.log("Ha ocurrido un error en la carga de las películas a la plataforma");
+    console.log(err);
+}};
+
+getPeliculas();
 
 // BOLETERIA (OBJETOS Y ARRAY) ------------------
 
@@ -141,8 +159,15 @@ productos.forEach((producto) => {
         }
         contadorCarrito();
         saveLocal();
-        pintarCarrito();
+        //pintarCarrito();
         console.log(carrito);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Producto agregado!",
+            showConfirmButton: false,
+            timer: 1200
+        })
     });
 });
 
@@ -163,12 +188,12 @@ const pintarCarrito = () => {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modalHeader";
     modalHeader.innerHTML = `
-        <h1 class="modalHeader-titulo">Carrito</h1>
+        <h1 class="modalHeader-titulo">🛒 Carrito</h1>
     `;
     modalContainer.append(modalHeader);
 
     const modalButton = document.createElement("button");
-    modalButton.innerText = "x";
+    modalButton.innerText = "Cerrar";
     modalButton.className = "modalHeaderButton";
     modalHeader.append(modalButton);
 
@@ -185,14 +210,33 @@ const pintarCarrito = () => {
         carritoContent.className = "carritoContent";
         carritoContent.innerHTML = `
         <img src="${producto.img}">
-        <div class="item-nom">${producto.nombre}</div>               
+        <div class="item-nom">${producto.nombre}</div>
+        <div class="item-res">-</div>
         <div class="item-can">Cantidad: ${producto.cantidad}</div>
+        <div class="item-sum">+</div>
         <div class="item-pre">$${producto.precio * producto.cantidad}</div>        
     `;
         modalContainer.append(carritoContent);
 
+        let restar = carritoContent.querySelector(".item-res");
+        restar.addEventListener("click", () => {
+            if (producto.cantidad != 1) {
+                producto.cantidad -= 1
+            };
+            saveLocal();
+            pintarCarrito();
+        });
+
+        let sumar = carritoContent.querySelector(".item-sum");
+        sumar.addEventListener("click", () => {
+            producto.cantidad += 1;
+            saveLocal();
+            pintarCarrito();
+        });
+
+
         let eliminar = document.createElement("span");
-        eliminar.innerHTML = "X";
+        eliminar.innerHTML = "❌";
         eliminar.className = "deleteProducto";
         carritoContent.append(eliminar);
         eliminar.addEventListener("click", () => eliminarProducto(producto.id));
@@ -217,7 +261,7 @@ const pintarCarrito = () => {
     }
 };
 
-verCarrito.addEventListener("click", pintarCarrito);
+verCarrito.addEventListener("click", (pintarCarrito));
 
 // FUNCION CONTADOR CARRITO
 
@@ -235,8 +279,15 @@ const vaciarCarrito = () => {
         carrito.splice(i);
         contadorCarrito();
         saveLocal();
-        pintarCarrito();
+        //pintarCarrito();
         console.log(carrito);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "El carrito fue vaciado con éxito",
+            showConfirmButton: true,
+            timer: 8000
+        })
     };
 };
 
@@ -271,21 +322,25 @@ const btn = document.getElementById('button');
 document.getElementById('form')
     .addEventListener('submit', function (event) {
         event.preventDefault();
-        btn.value = 'Enviando mensaje...';
+
+        btn.value = 'Enviando...';
+
         const serviceID = 'default_service';
-        const templateID = 'template_y0aome1';
+        const templateID = 'template_5rg9duj';
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.value = 'Enviar Mensaje';
-                const mensajeEnviado = document.querySelector('.mensajeEnviado');
-                const mensaje = document.createElement("p");
-                mensaje.textContent = "Su mensaje ha sido enviado con éxito!";
-                mensajeEnviado.appendChild(mensaje);
+                btn.value = 'Enviar';
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Su mail ha sido enviado!",
+                    timer: 2000
+                });
             }, (err) => {
-                btn.value = 'Enviar Mensaje';
+                btn.value = 'Enviar';
                 alert(JSON.stringify(err));
             });
     });
 
-    contadorCarrito();
+contadorCarrito();
