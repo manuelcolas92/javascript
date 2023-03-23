@@ -546,6 +546,10 @@
         font-weight: 900;
     }
 
+    .logoCarrito {
+        display: flex;
+    }
+
     /* SECCION CONTACTO ----------------------------- */
 
     /* General */
