@@ -31,10 +31,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 10px;
+        font-size: 15px;
         margin: 50px 0 50px 0;
         border: 2px solid white;
-        width: 375px;
+        width: 370px;
     }
 
     .formValidador {
@@ -44,17 +44,18 @@
 
     .tituloValidador {
         color: white;
-        font-size: 15px;
+        font-size: 20px;
         ;
-        width: 90%;
+        width: 350px;
         text-align: center;
         padding: 30px;
     }
 
     #datosPersona input {
-        max-height: 30px;
         border: none;
         margin-top: 5px;
+        width: 300px;
+        height: 30px;
     }
 
     #datosPersona input:focus {
@@ -63,7 +64,7 @@
 
     .inputButton {
         background-color: #007BF2;
-        max-height: 30px;
+        height: 30px;
         color: white;
         border: none;
         cursor: pointer;
@@ -78,7 +79,7 @@
         margin-right: 10%;
         margin-top: 50px;
         margin-bottom: 50px;
-        width: 700px;
+        width: 350px;
     }
 
     /* BANNER MAIN ---------------------------------- */
